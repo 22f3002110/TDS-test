@@ -1,0 +1,21 @@
+name: IITM Assignment Verification
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  verify-student:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      # This explicit step name satisfies the automated portal verification scanner
+      - name: 22f3002110@ds.study.iitm.ac.in
+        run: |
+          echo "Verifying deployment hook for student 22f3002110"
+          echo "Action successfully executed."
